@@ -1,0 +1,209 @@
+/*data: {
+  'AK': {fillKey: 'state1'},
+  'AL': {fillKey: 'state1'},
+  'AR': {fillKey: 'state1'},
+  'AZ': {fillKey: 'state1'},
+  'CA': {fillKey: 'state1'},
+  'CO': {fillKey: 'state1'},
+  'CT': {fillKey: 'state1'},
+  'DE': {fillKey: 'state1'},
+  'FL': {fillKey: 'state1'},
+  'GA': {fillKey: 'state1'},
+  'HI': {fillKey: 'state1'},
+  'IA': {fillKey: 'state1'},
+  'ID': {fillKey: 'state1'},
+  'IL': {fillKey: 'state1'},
+  'IN': {fillKey: 'state1'},
+  'KS': {fillKey: 'state1'},
+  'KY': {fillKey: 'state1'},
+  'LA': {fillKey: 'state1'},
+  'MA': {fillKey: 'state1'},
+  'MD': {fillKey: 'state1'},
+  'ME': {fillKey: 'state1'},
+  'MI': {fillKey: 'state1'},
+  'MN': {fillKey: 'state1'},
+  'MO': {fillKey: 'state1'},
+  'MS': {fillKey: 'state1'},
+  'MT': {fillKey: 'state1'},
+  'NC': {fillKey: 'state1'},
+  'ND': {fillKey: 'state1'},
+  'NE': {fillKey: 'state1'},
+  'NH': {fillKey: 'state1'},
+  'NJ': {fillKey: 'state1'},
+  'NM': {fillKey: 'state1'},
+  'NV': {fillKey: 'state1'},
+  'NY': {fillKey: 'state1'},
+  'OH': {fillKey: 'state1'},
+  'OK': {fillKey: 'state1'},
+  'OR': {fillKey: 'state1'},
+  'PA': {fillKey: 'state1'},
+  'RI': {fillKey: 'state1'},
+  'SC': {fillKey: 'state1'},
+  'SD': {fillKey: 'state1'},
+  'TN': {fillKey: 'state1'},
+  'TX': {fillKey: 'state1'},
+  'UT': {fillKey: 'state1'},
+  'VA': {fillKey: 'state1'},
+  'VT': {fillKey: 'state1'},
+  'WA': {fillKey: 'state1'},
+  'WI': {fillKey: 'state1'},
+  'WV': {fillKey: 'state1'},
+  'WY': {fillKey: 'state1'}
+},*/
+
+
+/*function noFilter(){
+    map.bubbles(bombs
+        .filter(function(record){
+            return true;
+        }),
+        {
+            popupTemplate: function (geo, data) {
+                var produce = '<div class="produce">';
+                var j = 0;
+                for (var property in data) {
+                    if (data.hasOwnProperty(property) && data[property] === 'Y') {
+                        j++;
+                        produce +=  '<div style="width: 160px; display: inline-block">' + property + '</div>';
+                        if(j % 4 === 0){
+                            produce += '<div></div>';
+                        }
+                    }
+                }
+                produce += '</div>';
+
+                return [
+                              '<div class="hoverinfo">' +
+                                  '<div class="market-name">' + data.MarketName + '</div>',
+                                  '<br/>',
+                                  '<p>Website: ' +  data.Website + '</p>',
+                                  '<p>Address:' + data.street + ', ' + data.city + ', ' + data.State + ' ' + data.zip + '</p>',
+                                  data.Location.length > 0 ? '<p class="light-grey">'+data.Location+'</p>' : '',
+                                  '<p>Date: ' + data.Season1Date + '</p>',
+                                  '<p>Time: ' + data.Season1Time + '</p>',
+                                  '<p>Produce: ' + produce,
+                              '</div>'].join('');
+            }
+        });
+}*/
+/*function hoursFilter(key) {
+    filterName = key
+    map.bubbles(bombs
+        .filter(function(record, key){
+            return record['Season1Time'].indexOf(filterName) !== -1;
+        }),
+        {
+            popupTemplate: function (geo, data) {
+                var produce = '<div class="produce">';
+                var j = 0;
+                for (var property in data) {
+                    if (data.hasOwnProperty(property) && data[property] === 'Y') {
+                        j++;
+                        produce +=  '<div style="width: 160px; display: inline-block">' + property + '</div>';
+                        if(j % 4 === 0){
+                            produce += '<div></div>';
+                        }
+                    }
+                }
+                produce += '</div>';
+
+                return [
+                              '<div class="hoverinfo">' +
+                                  '<div class="market-name">' + data.MarketName + '</div>',
+                                  '<br/>',
+                                  '<p>Website: ' +  data.Website + '</p>',
+                                  '<p>Address:' + data.street + ', ' + data.city + ', ' + data.State + ' ' + data.zip + '</p>',
+                                  data.Location.length > 0 ? '<p class="light-grey">'+data.Location+'</p>' : '',
+                                  '<p>Date: ' + data.Season1Date + '</p>',
+                                  '<p>Time: ' + data.Season1Time + '</p>',
+                                  '<p>Produce: ' + produce,
+                              '</div>'].join('');
+            }
+        });
+}*/
+/*function foodFilter(key) {
+    // ga('send', 'event', 'button', 'click', 'Food Filter', key);
+    ga('send', {
+      'hitType': 'event',          // Required.
+      'eventCategory': 'button',   // Required.
+      'eventAction': 'click',      // Required.
+      'eventLabel': 'Food Filter',
+      'eventValue': key
+    });
+    filterName = key;
+
+    map.bubbles(bombs
+      .filter(function(record, key){
+          return record[filterName] === 'Y';
+      }),
+      {
+        popupTemplate: function (geo, data) {
+          var produce = '<div class="produce">';
+          var j = 0;
+          for (var property in data) {
+            if (data.hasOwnProperty(property) && data[property] === 'Y') {
+              j++;
+              produce +=  '<div style="width: 160px; display: inline-block">' + property + '</div>';
+              if(j % 4 === 0){
+                  produce += '<div></div>';
+              }
+            }
+          }
+          produce += '</div>';
+
+          return [
+            '<div class="hoverinfo">' +
+                '<div class="market-name">' + data.MarketName + '</div>',
+                '<br/>',
+                '<p>Website: ' +  data.Website + '</p>',
+                '<p>Address:' + data.street + ', ' + data.city + ', ' + data.State + ' ' + data.zip + '</p>',
+                data.Location.length > 0 ? '<p class="light-grey">'+data.Location+'</p>' : '',
+                '<p>Date: ' + data.Season1Date + '</p>',
+                '<p>Time: ' + data.Season1Time + '</p>',
+                '<p>Produce: ' + produce,
+            '</div>'].join('');
+        }
+      });
+}*/
+
+// function zeroVisits() {
+//     map.bubbles(bombs.filter(function(record){return record.visits === 0;}), {popupTemplate: function (geo, data) {return ['<div class="hoverinfo">' +  data.name, '<br/>Visits: ' +  data.visits , '</div>'].join(''); } });
+// }
+// function haveVisits() {
+//     map.bubbles(bombs.filter(function(record){return record.visits > 0;}), {popupTemplate: function (geo, data) {return ['<div class="hoverinfo">' +  data.name, '<br/>Visits: ' +  data.visits , '</div>'].join(''); } });
+// }
+
+
+// -84.5716,40.5495
+/*setProjection: function(element) {
+    var projection = d3.geo.equirectangular()
+      .center([-84.5716, 40.5495])
+      // .rotate([4.4, 0])
+      .scale(13000)
+      .translate([element.offsetWidth / 7, element.offsetHeight / 2.35]);
+    var path = d3.geo.path()
+      .projection(projection);
+
+    return {path: path, projection: projection};
+  },*/
+
+
+
+
+
+  // on state click
+  /*map.svg.selectAll('.datamaps-subunit').on('click', function(d) {
+      console.log(d);
+      var stateMarkets = bombs.filter(function(record){
+          return record.State == d.properties.name;
+      });
+      var list = '<ul>';
+      stateMarkets.forEach(function(record){
+          list += '<li>'+ record.MarketName +'</li>'
+      })
+      list += '</ul>'
+
+      var node = d3.select('#listOfMarkets');
+
+      node[0][0].innerHTML = list;
+  });*/
